@@ -1,0 +1,65 @@
+/* ============================================================
+   File: assets/css/style.css
+   Chức năng: Định nghĩa Theme Màu & Hiệu ứng Glassmorphism
+   ============================================================ */
+
+:root {
+    --primary-gold: #E5A93B;    /* Vàng mật ong ấm áp làm điểm nhấn */
+    --bg-cream: #FDFBF7;        /* Nền trắng kem dịu mắt */
+    --text-charcoal: #2C2C2C;   /* Chữ đen charcoal sang trọng */
+    --glass-bg: rgba(255, 255, 255, 0.65);
+    --glass-border: rgba(255, 255, 255, 0.3);
+    --glass-blur: blur(12px);
+}
+
+body {
+    background-color: var(--bg-cream);
+    color: var(--text-charcoal);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+/* Hiệu ứng Glassmorphism cho Thanh điều hướng & Khung thông tin */
+.glass-nav {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border-bottom: 1px solid var(--glass-border);
+    transition: all 0.3s ease;
+}
+
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* Nút bấm custom theo tone vàng mật ong */
+.btn-gold {
+    background-color: var(--primary-gold);
+    color: #ffffff;
+    border-radius: 30px;
+    padding: 10px 24px;
+    font-weight: 600;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-gold:hover {
+    background-color: #C98F2A;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(229, 169, 59, 0.4);
+}
+
+/* Hiệu ứng Hover 3D nhẹ nhàng cho thẻ sản phẩm (Dùng cho bước sau) */
+.product-card-hover {
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
+}
+.product-card-hover:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
